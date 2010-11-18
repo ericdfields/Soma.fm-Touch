@@ -1,0 +1,46 @@
+@import "compass/reset";
+@import "compass/css3";      
+
+$default-text-shadow-blur: 0;
+
+body {
+  color: white;
+  @include linear-gradient(color-stops(#606c88,#3f4c6b));
+}                 
+ul {
+  padding-bottom:50px;
+}
+li {
+  display: inline-block;
+  width: 24.6%;
+  text-align: center;
+  padding: 50px 0 0;       
+  -webkit-perspective: 600;
+  font-family: Arial, Verdana, Helvetica, sans-serif;
+  font-size: small;        
+  a {                    
+    display: block;
+    width: 120px;
+    height: 120px;         
+    border: 2px solid rgba(0,0,0,0.85);
+    @include border-radius();  
+    overflow: hidden;    
+    @include box-shadow(rgba(0,0,0,0.5),0,0,0.5em,-0.2em);
+    margin: 0px auto 0.5em;     
+    &.active {            
+      border-color: rgba(82,168,236,0.5);
+      @include box-shadow(rgba(82,168,236,0.85),0,0,8px);
+      @include scale(1.1);
+      @include translate(-2px);
+    }
+  }                             
+}
+h3 {
+  font-weight: bold;
+  @include text-shadow(rgba(0,0,0,0.65));
+}              
+@media screen and (max-device-width: 480px) {
+  li {
+    width: 100%;
+  }
+}              
